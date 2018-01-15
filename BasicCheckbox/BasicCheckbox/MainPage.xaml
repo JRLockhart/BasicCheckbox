@@ -16,5 +16,15 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <CheckBox x:Name="EnableCheckbox" Content="Enable Label Changing" Grid.Column="1" 
+                  HorizontalAlignment="center" VerticalAlignment="center" IsChecked="True"/>
+        
+        <Button x:Name="ChangeText" Content="Change the Label if Checked" Grid.Column="0" 
+                HorizontalAlignment="Center" VerticalAlignment="center" FontFamily="Segoe UI" Click="ChangeText_Click"/>
+        
+        <TextBlock x:Name="LabelToChange" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" 
+                   HorizontalAlignment="center" VerticalAlignment="Center" Text="Press the button to change my text" FontSize="14" SelectionChanged="LabelToChange_SelectionChanged" />
+
+
     </Grid>
 </Page>

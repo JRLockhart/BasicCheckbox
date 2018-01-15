@@ -13,7 +13,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace BasicCheckbox
 {
@@ -25,6 +24,35 @@ namespace BasicCheckbox
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void ChangeText_Click(object sender, RoutedEventArgs e)
+        {
+            if (EnableCheckbox.IsChecked == true)
+            {
+                if (LabelToChange.Text == "Right")
+                {
+                    LabelToChange.HorizontalAlignment = HorizontalAlignment.Left;
+                    LabelToChange.Text = "Left";
+                }
+                else
+                {
+                    LabelToChange.HorizontalAlignment =  HorizontalAlignment.Right;
+                    LabelToChange.Text = "Right";
+                }
+                
+            }
+            
+            else
+            {
+                LabelToChange.Text = "Text changing disabled";
+                LabelToChange.HorizontalAlignment = HorizontalAlignment.Center;
+            }
+        }
+
+        private void LabelToChange_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
